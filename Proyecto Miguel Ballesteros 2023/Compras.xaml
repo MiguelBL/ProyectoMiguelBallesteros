@@ -1,0 +1,73 @@
+﻿<Window x:Class="Proyecto_Miguel_Ballesteros_2023.Compras"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto_Miguel_Ballesteros_2023"
+        mc:Ignorable="d"
+        Title="Compras" Height="450" Width="800">
+    <Grid>
+        <Image Source="Assets/farmacia-productos-728.png" Stretch="UniformToFill" />
+        <ListView x:Name="LVCompras" Height="304" Margin="330,56,13.6,0" VerticalAlignment="Top" SelectionChanged="LVCompras_SelectionChanged" FontFamily="Bodoni MT">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding id}" Width="50"/>
+                    <GridViewColumn Header="Proveedor" DisplayMemberBinding="{Binding proveedorId}" Width="250"/>
+                    <GridViewColumn Header="Total" DisplayMemberBinding="{Binding total}" Width="60"/>
+                    <GridViewColumn Header="Fecha" DisplayMemberBinding="{Binding fecha}" Width="85"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="400" Margin="5,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="305" StrokeThickness="2"/>
+        <Button x:Name="BTActualizar" Content="Actualizar" HorizontalAlignment="Left" Height="39" Margin="23,335,0,0" VerticalAlignment="Top" Width="265" Background="#FF5F99D9" FontFamily="Bodoni MT" FontWeight="Bold" FontSize="16" Click="BTActualizar_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="20">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="Button" HorizontalAlignment="Left" Height="39" Margin="158,335,0,0" VerticalAlignment="Top" Width="103" FontFamily="Bodoni MT" Visibility="Hidden"/>
+        <TextBox x:Name="TxtMed1" HorizontalAlignment="Left" Height="36" Margin="262,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" TextChanged="TxtMed1_TextChanged" FontFamily="Bodoni MT"/>
+        <TextBox x:Name="TxtMed2" HorizontalAlignment="Left" Height="36" Margin="262,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" TextChanged="TxtMed2_TextChanged" FontFamily="Bodoni MT"/>
+        <TextBox x:Name="TxtMed3" HorizontalAlignment="Left" Height="36" Margin="262,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" TextChanged="TxtMed3_TextChanged" FontFamily="Bodoni MT"/>
+        <Label x:Name="LblMaxMed1" Content="" HorizontalAlignment="Left" Height="34" Margin="216,131,0,0" VerticalAlignment="Top" Width="37" BorderThickness="1" BorderBrush="Black" FontFamily="Bodoni MT"/>
+        <Label x:Name="LblMaxMed2" Content="" HorizontalAlignment="Left" Height="34" Margin="216,191,0,0" VerticalAlignment="Top" Width="37" BorderBrush="Black" BorderThickness="1" FontFamily="Bodoni MT"/>
+        <Label x:Name="LblMaxMed3" Content="" HorizontalAlignment="Left" Height="34" Margin="216,248,0,0" VerticalAlignment="Top" Width="37" BorderThickness="1" BorderBrush="Black" FontFamily="Bodoni MT"/>
+        <Label x:Name="LblMed1Reg" Content="" HorizontalAlignment="Left" Height="34" Margin="160,131,0,0" VerticalAlignment="Top" Width="37" BorderBrush="Black" BorderThickness="1" FontFamily="Bodoni MT"/>
+        <Label x:Name="LblMed2Reg" Content="" HorizontalAlignment="Left" Height="34" Margin="160,191,0,0" VerticalAlignment="Top" Width="37" BorderBrush="Black" BorderThickness="1" RenderTransformOrigin="0.371,0.475" FontFamily="Bodoni MT"/>
+        <Label x:Name="LblMed3Reg" Content="" HorizontalAlignment="Left" Height="34" Margin="160,248,0,0" VerticalAlignment="Top" Width="37" BorderBrush="Black" BorderThickness="1" FontFamily="Bodoni MT"/>
+        <Label x:Name="LblMed1" Content="Medicamento 1" HorizontalAlignment="Left" Height="34" Margin="11,131,0,0" VerticalAlignment="Top" Width="95" FontFamily="Bodoni MT" FontWeight="Bold"/>
+        <Label x:Name="LblMed2" Content="Medicamento 2" HorizontalAlignment="Left" Height="36" Margin="11,189,0,0" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.426,-0.306" FontFamily="Bodoni MT" FontWeight="Bold"/>
+        <Label x:Name="LblMed3" Content="Medicamento 3" HorizontalAlignment="Left" Height="34" Margin="11,248,0,0" VerticalAlignment="Top" Width="95" FontFamily="Bodoni MT" FontWeight="Bold"/>
+        <Label Content="Stock " HorizontalAlignment="Left" Height="45" Margin="211,86,0,0" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.104,0.389" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bodoni MT"/>
+        <Label Content="Registrado" HorizontalAlignment="Left" Height="45" Margin="145,86,0,0" VerticalAlignment="Top" Width="68" RenderTransformOrigin="0.104,0.389" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bodoni MT"/>
+        <Label Content="Nuevo" HorizontalAlignment="Left" Height="26" Margin="255,84,0,0" VerticalAlignment="Top" Width="51" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bodoni MT"/>
+        <Label Content="valor" HorizontalAlignment="Left" Height="26" Margin="255,98,0,0" VerticalAlignment="Top" Width="51" RenderTransformOrigin="0.557,1.318" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bodoni MT"/>
+        <Label Content="Precio (€)" HorizontalAlignment="Left" Height="45" Margin="91,86,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.104,0.389" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bodoni MT"/>
+        <Label x:Name="LblPMed1" Content="" HorizontalAlignment="Left" Height="34" Margin="106,131,0,0" VerticalAlignment="Top" Width="37" BorderBrush="Black" BorderThickness="1" FontFamily="Bodoni MT"/>
+        <Label x:Name="LblPMed2" Content="" HorizontalAlignment="Left" Height="34" Margin="106,191,0,0" VerticalAlignment="Top" Width="37" BorderBrush="Black" BorderThickness="1" RenderTransformOrigin="0.371,0.475" FontFamily="Bodoni MT"/>
+        <Label x:Name="LblPMed3" Content="" HorizontalAlignment="Left" Height="34" Margin="106,248,0,0" VerticalAlignment="Top" Width="37" BorderBrush="Black" BorderThickness="1" FontFamily="Bodoni MT"/>
+        <Label x:Name="LblEmail" Content="Label" HorizontalAlignment="Left" Height="34" Margin="408,386,0,0" VerticalAlignment="Top" Width="169" Visibility="Hidden"/>
+        <Button x:Name="BTNewCompra" Content="Añadir nueva compra" HorizontalAlignment="Right" Height="41" Margin="0,0,44.6,10" VerticalAlignment="Bottom" Width="277" Background="#FF5F99D9" FontFamily="Bodoni MT" FontWeight="Bold" FontSize="16" Click="BTNewCompra_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="20">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+    </Grid>
+</Window>

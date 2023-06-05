@@ -1,0 +1,85 @@
+﻿<Window x:Class="Proyecto_Miguel_Ballesteros_2023.GestionUsers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto_Miguel_Ballesteros_2023"
+        mc:Ignorable="d"
+        Title="GestionUsers" Height="450" Width="800">
+    <Grid>
+        <Image Source="Assets/farmacia-productos-728.png" Stretch="UniformToFill" />
+        <ListView x:Name="LVUsuarios" Height="300" Margin="240,60,31.6,0" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="2" FontFamily="Bodoni MT" SelectionChanged="LVUsuarios_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding nombre}" Width="170"/>
+                    <GridViewColumn Header="Direccion" DisplayMemberBinding="{Binding adress}" Width="180"/>
+                    <GridViewColumn Header="Telefono" DisplayMemberBinding="{Binding phone}" Width="80"/>
+                    <GridViewColumn Header="Rol" DisplayMemberBinding="{Binding rol}" Width="85"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Margin="11,10,0,10" Stroke="Black" StrokeThickness="3" Width="211"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Height="31" Margin="11,27,0,0" VerticalAlignment="Top" Width="211" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bodoni MT" FontWeight="Bold"/>
+        <TextBox x:Name="TxtNombre" HorizontalAlignment="Left" Height="53" Margin="25,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" HorizontalContentAlignment="Center" FontFamily="Bodoni MT"/>
+        <Label Content="Dirección" HorizontalAlignment="Left" Height="31" Margin="11,119,0,0" VerticalAlignment="Top" Width="211" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bodoni MT" FontWeight="Bold"/>
+        <TextBox x:Name="TxtDireccion" HorizontalAlignment="Left" Height="53" Margin="25,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" HorizontalContentAlignment="Center" FontFamily="Bodoni MT"/>
+        <Label Content="Teléfono" HorizontalAlignment="Left" Height="31" Margin="11,211,0,0" VerticalAlignment="Top" Width="211" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bodoni MT" FontWeight="Bold"/>
+        <TextBox x:Name="TxtTelefono" HorizontalAlignment="Left" Height="30" Margin="25,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bodoni MT"/>
+        <Label Content="Rol" HorizontalAlignment="Left" Height="31" Margin="11,280,0,0" VerticalAlignment="Top" Width="211" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Bodoni MT" FontWeight="Bold"/>
+        <ComboBox x:Name="CBRol" HorizontalAlignment="Left" Height="32" Margin="25,311,0,0" VerticalAlignment="Top" Width="183" FontFamily="Bodoni MT" BorderBrush="Black">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Button x:Name="BTSave" Content="Guardar" HorizontalAlignment="Left" Height="29" Margin="25,361,0,0" VerticalAlignment="Top" Width="183"  Background="#FF5F99D9" FontFamily="Bodoni MT" FontWeight="Bold" FontSize="16" Click="BTSave_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="20">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="BTNewUser" Content="Nuevo usuario" Height="31" Margin="0,0,222.6,12" VerticalAlignment="Bottom" FontFamily="Bodoni MT" FontWeight="Bold" BorderBrush="Black" Background="White" FontSize="16" Click="BTNewUser_Click" HorizontalAlignment="Right" Width="166">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="20">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Right" Height="33" Margin="0,0,0.6,0" Stroke="Black" VerticalAlignment="Top" Width="332"/>
+        <Label x:Name="LblUser" Content="" Height="33" Margin="0,0,0.6,0" VerticalAlignment="Top" FontFamily="Bodoni MT" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="332"/>
+        <Label x:Name="LblEmail" Content="Label" HorizontalAlignment="Left" Height="30" Margin="280,390,0,0" VerticalAlignment="Top" Width="226" Visibility="Hidden"/>
+        <TextBox x:Name="TxtEmail" HorizontalAlignment="Left" Height="23" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Visibility="Hidden"/>
+        <Label x:Name="LblEmailUser" Content="Label" HorizontalAlignment="Left" Height="30" Margin="267,390,0,0" VerticalAlignment="Top" Width="153" Visibility="Hidden"/>
+        <Button x:Name="BTRefresh" Content="Actualizar lista" Height="31" Margin="0,0,31.6,12" VerticalAlignment="Bottom" FontFamily="Bodoni MT" FontWeight="Bold" BorderBrush="Black" Background="White" FontSize="16" Click="BTRefresh_Click" HorizontalAlignment="Right" Width="166">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="20">
+                        <ContentPresenter HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label x:Name="LblRol" Content="Label" HorizontalAlignment="Left" Height="47" Margin="242,373,0,0" VerticalAlignment="Top" Width="163" Visibility="Hidden"/>
+
+    </Grid>
+</Window>

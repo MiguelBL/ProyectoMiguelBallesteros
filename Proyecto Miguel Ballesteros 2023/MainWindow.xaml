@@ -1,0 +1,45 @@
+﻿<Window x:Class="Proyecto_Miguel_Ballesteros_2023.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto_Miguel_Ballesteros_2023"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="0,0,3.6,0">
+        <Image Source="Assets/farmacia-productos-728.png" Stretch="UniformToFill" />
+        <Rectangle Fill="White" Stroke="Black" Margin="254,60,253,0" StrokeThickness="2" Height="304" VerticalAlignment="Top"/>
+        <Label Content="Email" Margin="359,79,356,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Bodoni MT" FontSize="20" Height="51" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtUsuario" Margin="269,135,268,0" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Center" SpellCheck.IsEnabled="True" Height="23" VerticalAlignment="Top"/>
+        <Label Content="Contraseña" Margin="329,163,316,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bodoni MT" FontSize="20" FontWeight="Bold" Height="47" VerticalAlignment="Top"/>
+        <Button x:Name="btAcceder" Content="Acceder" Margin="312,278,297,0" Click="btAcceder_Click" Background="#FF5F99D9" FontFamily="Bodoni MT" FontWeight="Bold" FontSize="16" Height="26" VerticalAlignment="Top" >
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="20">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btRegistro" Content="Registrarse" Margin="312,317,297,0" Background="#FF5F99D9" FontFamily="Bodoni MT" FontSize="16" Click="btRegistro_Click" Height="26" VerticalAlignment="Top" FontWeight="Bold">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="20">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label x:Name="label" Content="" Margin="262,60,457,0" Height="46" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="TxtPassword" Margin="270,215,267,0" PasswordChar="*" Height="23" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+
+    </Grid>
+</Window>
